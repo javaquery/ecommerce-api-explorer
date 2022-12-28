@@ -1,0 +1,748 @@
+{
+	"info": {
+		"_postman_id": "f10eeed6-8a98-4378-bb3f-10ad9dc77660",
+		"name": "Platform",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Shopify",
+			"item": [
+				{
+					"name": "Products",
+					"item": [
+						{
+							"name": "Product",
+							"item": [
+								{
+									"name": "Retrieve a list of products",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/products.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"products.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Retrieve a single product",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/products/3238819528785.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"products",
+												"3238819528785.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Retrieve a count of products",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/products/count.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"products",
+												"count.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Updates a product",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"product\": {\r\n        \"id\": 7037774299312,\r\n        \"title\": \"iPad Air 1.0\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/products/7037774299312.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"products",
+												"7037774299312.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete a product",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/products/7037774299312.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"products",
+												"7037774299312.json"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Orders",
+					"item": [
+						{
+							"name": "Order",
+							"item": [
+								{
+									"name": "Retrieve a list of orders",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/orders.json?status=any",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"orders.json"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "any"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Retrieve a specific order",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/orders/4625517084848.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"orders",
+												"4625517084848.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Retrieve an order count",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/orders/count.json?status=any",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"orders",
+												"count.json"
+											],
+											"query": [
+												{
+													"key": "status",
+													"value": "any"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Cancel an order",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/orders/4625517084848/cancel.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"orders",
+												"4625517084848",
+												"cancel.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Close an order",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/orders/4625517084848/close.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"orders",
+												"4625517084848",
+												"close.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Re-open a closed order",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/orders/4625517084848/open.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"orders",
+												"4625517084848",
+												"open.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Update an order",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"order\": {\r\n        \"id\": 4623052767408,\r\n        \"metafields\": [\r\n            {\r\n                \"key\": \"new\",\r\n                \"value\": \"newvalue\",\r\n                \"type\": \"single_line_text_field\",\r\n                \"namespace\": \"global\"\r\n            }\r\n        ]\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/orders/4625517084848.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"orders",
+												"4625517084848.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Delete an order",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/orders/4625517084848.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"orders",
+												"4625517084848.json"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "Inventory",
+					"item": [
+						{
+							"name": "Inventory Item",
+							"item": [
+								{
+									"name": "Retrieves a list of inventory items",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/inventory_items.json?ids=43449211388080",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"inventory_items.json"
+											],
+											"query": [
+												{
+													"key": "ids",
+													"value": "43449211388080"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Retrieves a single inventory item by ID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/inventory_items/43449211388080.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"inventory_items",
+												"43449211388080.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Updates an existing inventory item",
+									"request": {
+										"method": "PUT",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"inventory_item\": {\r\n        \"id\": 43449211388080,\r\n        \"sku\": \"IPADAIR14\"\r\n    }\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/inventory_items/43449211388080.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"inventory_items",
+												"43449211388080.json"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "InventoryLevel",
+							"item": [
+								{
+									"name": "Adjusts the inventory level of an inventory item at a location",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"location_id\": 66075426992,\r\n    \"inventory_item_id\": 43449211388080,\r\n    \"available_adjustment\": 5001\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/inventory_levels/adjust.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"inventory_levels",
+												"adjust.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Retrieves a list of inventory levels",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/inventory_levels.json?location_ids=66075426992",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"inventory_levels.json"
+											],
+											"query": [
+												{
+													"key": "location_ids",
+													"value": "66075426992"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Connects an inventory item to a location",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"location_id\": 844681632,\r\n    \"inventory_item_id\": 457924702\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/inventory_levels/connect.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"inventory_levels",
+												"connect.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Sets the inventory level for an inventory item at a location",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\r\n    \"location_id\": 66075426992,\r\n    \"inventory_item_id\": 43449211388080,\r\n    \"available\": 5001\r\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/inventory_levels/set.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"inventory_levels",
+												"set.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Retrieves a list of inventory levels",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/inventory_levels.json?location_ids=66075426992",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"inventory_levels.json"
+											],
+											"query": [
+												{
+													"key": "location_ids",
+													"value": "66075426992"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Deletes an inventory level from a location",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/inventory_levels.json?inventory_item_id=808950810&location_id=655441491",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"inventory_levels.json"
+											],
+											"query": [
+												{
+													"key": "inventory_item_id",
+													"value": "808950810"
+												},
+												{
+													"key": "location_id",
+													"value": "655441491"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Location",
+							"item": [
+								{
+									"name": "Retrieve a list of locations",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/locations.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"locations.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Retrieve a single location by its ID",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/locations/66075426992.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"locations",
+												"66075426992.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Retrieve a list of inventory levels for a location",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/locations/66075426992/inventory_levels.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"locations",
+												"66075426992",
+												"inventory_levels.json"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Retrieve a count of locations",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{shopify_store_url}}/admin/api/{{shopify_api_version}}/locations/count.json",
+											"host": [
+												"{{shopify_store_url}}"
+											],
+											"path": [
+												"admin",
+												"api",
+												"{{shopify_api_version}}",
+												"locations",
+												"count.json"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			],
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.request.headers.add({key: 'X-Shopify-Access-Token', value: pm.collectionVariables.get('shopify_x_shopify_access_token')});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "shopify_api_version",
+			"value": "2022-10",
+			"type": "default"
+		},
+		{
+			"key": "shopify_store_url",
+			"value": "",
+			"type": "default"
+		},
+		{
+			"key": "shopify_x_shopify_access_token",
+			"value": "",
+			"type": "default"
+		}
+	]
+}
