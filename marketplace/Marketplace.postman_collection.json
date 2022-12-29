@@ -1,0 +1,564 @@
+{
+	"info": {
+		"_postman_id": "fc950c24-1675-4ef1-97d5-7876e41c9e4c",
+		"name": "Marketplace",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "2862061"
+	},
+	"item": [
+		{
+			"name": "Etsy",
+			"item": [
+				{
+					"name": "v3",
+					"item": [
+						{
+							"name": "Authentication",
+							"item": [
+								{
+									"name": "Request an Authorization Code",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "https://www.etsy.com/oauth/connect?response_type=code&client_id={{etsy_client_id}}&redirect_uri={{etsy_redirect_uri}}&scope=listings_r listings_w shops_r transactions_r transactions_w email_r favorites_r&state=K-%3aTXi%239SyWSIO6?tt!@]*&code_challenge=DSWlW2Abh-cf8CeLL8-g3hQ2WQyYdKyiu83u_s7nRhI&code_challenge_method=S256",
+											"protocol": "https",
+											"host": [
+												"www",
+												"etsy",
+												"com"
+											],
+											"path": [
+												"oauth",
+												"connect"
+											],
+											"query": [
+												{
+													"key": "response_type",
+													"value": "code"
+												},
+												{
+													"key": "client_id",
+													"value": "{{etsy_client_id}}"
+												},
+												{
+													"key": "redirect_uri",
+													"value": "{{etsy_redirect_uri}}"
+												},
+												{
+													"key": "scope",
+													"value": "listings_r listings_w shops_r transactions_r transactions_w email_r favorites_r"
+												},
+												{
+													"key": "state",
+													"value": "K-%3aTXi%239SyWSIO6?tt!@]*"
+												},
+												{
+													"key": "code_challenge",
+													"value": "DSWlW2Abh-cf8CeLL8-g3hQ2WQyYdKyiu83u_s7nRhI"
+												},
+												{
+													"key": "code_challenge_method",
+													"value": "S256"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Request an Access Token",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Cookie",
+												"value": "fve=1665133908.0; uaid=-a3mKvpKclanbAh_f1Kcn7C15g1jZACCZPu3IWB6Lce7aqXSxMwUJSulFPOU3KKSyJKARNcSpyT_yOKysPQqP59QD91SS6VaBgA.; user_prefs=XSeDmq4TxcIS1ulUomNDJ10fxZ1jZACCpP-pXiA62f5tSLSSp1-Qkk5eaU6OjlJqnq67k5IOUAgqYgShcBGxDAA."
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "grant_type",
+													"value": "authorization_code",
+													"type": "text"
+												},
+												{
+													"key": "client_id",
+													"value": "{{etsy_client_id}}",
+													"type": "text"
+												},
+												{
+													"key": "redirect_uri",
+													"value": "{{etsy_redirect_uri}}",
+													"type": "text"
+												},
+												{
+													"key": "code",
+													"value": "P59KflmTyMTYgFPHiZN1GU4PDxKQq3dYFKUU1n1KCvNfUf1ZWGw19El5rLU5XcA9utVDYWlTVaeqPNl_aX-fFAtSLGjSn5BX64W_",
+													"type": "text"
+												},
+												{
+													"key": "code_verifier",
+													"value": "vvkdljkejllufrvbhgeiegrnvufrhvrffnkvcknjvfid",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "https://api.etsy.com/v3/public/oauth/token",
+											"protocol": "https",
+											"host": [
+												"api",
+												"etsy",
+												"com"
+											],
+											"path": [
+												"v3",
+												"public",
+												"oauth",
+												"token"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "Access Token via Refresh Token",
+									"request": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/x-www-form-urlencoded"
+											},
+											{
+												"key": "Cookie",
+												"value": "fve=1665133908.0; uaid=-a3mKvpKclanbAh_f1Kcn7C15g1jZACCZPu3IWB6Lce7aqXSxMwUJSulFPOU3KKSyJKARNcSpyT_yOKysPQqP59QD91SS6VaBgA.; user_prefs=XSeDmq4TxcIS1ulUomNDJ10fxZ1jZACCpP-pXiA62f5tSLSSp1-Qkk5eaU6OjlJqnq67k5IOUAgqYgShcBGxDAA."
+											}
+										],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "grant_type",
+													"value": "refresh_token",
+													"type": "text"
+												},
+												{
+													"key": "client_id",
+													"value": "{{etsy_client_id}}",
+													"type": "text"
+												},
+												{
+													"key": "refresh_token",
+													"value": "26320208.VF2EevAX6E2qtJ8H3H51fgjyH3nw6AP-g7TWImuFpqxQlWgciVoFYLcQymcMutu6DXAkNjskoHIvOKb_EAv6vTXjJ9i",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "https://api.etsy.com/v3/public/oauth/token",
+											"protocol": "https",
+											"host": [
+												"api",
+												"etsy",
+												"com"
+											],
+											"path": [
+												"v3",
+												"public",
+												"oauth",
+												"token"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "ShopListing",
+							"item": [
+								{
+									"name": "getListingsByShop",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{etsy_open_api_url}}/shops/{{etsy_shop_id}}/listings?state=active&includes=Images&limit=50&offset=50",
+											"host": [
+												"{{etsy_open_api_url}}"
+											],
+											"path": [
+												"shops",
+												"{{etsy_shop_id}}",
+												"listings"
+											],
+											"query": [
+												{
+													"key": "state",
+													"value": "active"
+												},
+												{
+													"key": "includes",
+													"value": "Images"
+												},
+												{
+													"key": "limit",
+													"value": "50"
+												},
+												{
+													"key": "offset",
+													"value": "50"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getListing",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{etsy_open_api_url}}/listings/1032231386",
+											"host": [
+												"{{etsy_open_api_url}}"
+											],
+											"path": [
+												"listings",
+												"1032231386"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "ShopListing Inventory",
+							"item": [
+								{
+									"name": "getListingInventory",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{etsy_open_api_url}}/listings/1032231386/inventory",
+											"host": [
+												"{{etsy_open_api_url}}"
+											],
+											"path": [
+												"listings",
+												"1032231386",
+												"inventory"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Shop Receipt",
+							"item": [
+								{
+									"name": "getShopReceipts",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{etsy_open_api_url}}/shops/{{etsy_shop_id}}/receipts?includes=Transactions&limit=50&offset=50&min_created=946684800",
+											"host": [
+												"{{etsy_open_api_url}}"
+											],
+											"path": [
+												"shops",
+												"{{etsy_shop_id}}",
+												"receipts"
+											],
+											"query": [
+												{
+													"key": "includes",
+													"value": "Transactions"
+												},
+												{
+													"key": "limit",
+													"value": "50"
+												},
+												{
+													"key": "offset",
+													"value": "50"
+												},
+												{
+													"key": "min_created",
+													"value": "946684800"
+												}
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getShopReceipt",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{etsy_open_api_url}}/shops/{{etsy_shop_id}}/receipts/2627210931",
+											"host": [
+												"{{etsy_open_api_url}}"
+											],
+											"path": [
+												"shops",
+												"{{etsy_shop_id}}",
+												"receipts",
+												"2627210931"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "createReceiptShipment",
+									"request": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "urlencoded",
+											"urlencoded": [
+												{
+													"key": "carrier_name",
+													"value": "Royal Mail",
+													"type": "text"
+												},
+												{
+													"key": "tracking_code",
+													"value": "dummy",
+													"type": "text"
+												}
+											]
+										},
+										"url": {
+											"raw": "{{etsy_open_api_url}}/shops/{{etsy_shop_id}}/receipts/2623266086/tracking",
+											"host": [
+												"{{etsy_open_api_url}}"
+											],
+											"path": [
+												"shops",
+												"{{etsy_shop_id}}",
+												"receipts",
+												"2623266086",
+												"tracking"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "User",
+							"item": [
+								{
+									"name": "getUser",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{etsy_open_api_url}}/users/230534801",
+											"host": [
+												"{{etsy_open_api_url}}"
+											],
+											"path": [
+												"users",
+												"230534801"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getMe",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{etsy_open_api_url}}/users/me",
+											"host": [
+												"{{etsy_open_api_url}}"
+											],
+											"path": [
+												"users",
+												"me"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Shop Receipt Transactions",
+							"item": [
+								{
+									"name": "getShopReceiptTransaction",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{etsy_open_api_url}}/shops/{{etsy_shop_id}}/transactions/3219650679",
+											"host": [
+												"{{etsy_open_api_url}}"
+											],
+											"path": [
+												"shops",
+												"{{etsy_shop_id}}",
+												"transactions",
+												"3219650679"
+											]
+										}
+									},
+									"response": []
+								},
+								{
+									"name": "getShopReceiptTransactionsByReceipt",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{etsy_open_api_url}}/shops/{{etsy_shop_id}}/receipts/2627210931/transactions",
+											"host": [
+												"{{etsy_open_api_url}}"
+											],
+											"path": [
+												"shops",
+												"{{etsy_shop_id}}",
+												"receipts",
+												"2627210931",
+												"transactions"
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						},
+						{
+							"name": "Shop",
+							"item": [
+								{
+									"name": "findShops",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{etsy_open_api_url}}/shops?shop_name=dummy",
+											"host": [
+												"{{etsy_open_api_url}}"
+											],
+											"path": [
+												"shops"
+											],
+											"query": [
+												{
+													"key": "shop_name",
+													"value": "dummy"
+												}
+											]
+										}
+									},
+									"response": []
+								}
+							]
+						}
+					]
+				}
+			],
+			"auth": {
+				"type": "oauth2",
+				"oauth2": [
+					{
+						"key": "addTokenTo",
+						"value": "header",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							"pm.request.headers.add({key: 'x-api-key', value: pm.collectionVariables.get('etsy_client_id')});"
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "etsy_client_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "etsy_redirect_uri",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "etsy_open_api_url",
+			"value": "https://openapi.etsy.com/v3/application",
+			"type": "string"
+		},
+		{
+			"key": "etsy_shop_id",
+			"value": "",
+			"type": "string"
+		},
+		{
+			"key": "etsy_access_token",
+			"value": "",
+			"type": "string"
+		}
+	]
+}
